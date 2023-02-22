@@ -15,6 +15,12 @@ export READER="zathura"
 export SFEED_SOURCE="${XDG_CONFIG_HOME:-$HOME/.config}/sfeed/sfeedrc"
 export SFEED_FEEDS="${XDG_DATA_HOME:-$HOME/.local/share}/sfeed/feeds"
 
+# Disable Go/Google crap
+export GOPROXY=direct
+export GOSUMDB=off
+export GOTELEMETRY=off
+export GOTOOLCHAIN=local
+
 # XDG dirs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

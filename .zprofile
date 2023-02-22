@@ -5,8 +5,8 @@
 # Add scripts to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
-# Alias
-export BROWSER="qutebrowser"
+# Program vars
+export BROWSER="firefox"
 export EDITOR="nvim"
 export TERMINAL="st"
 export READER="zathura"
@@ -14,6 +14,12 @@ export READER="zathura"
 # sfeed vars
 export SFEED_SOURCE="${XDG_CONFIG_HOME:-$HOME/.config}/sfeed/sfeedrc"
 export SFEED_FEEDS="${XDG_DATA_HOME:-$HOME/.local/share}/sfeed/feeds"
+
+# Disable Go/Google crap
+export GOPROXY=direct
+export GOSUMDB=off
+export GOTELEMETRY=off
+export GOTOOLCHAIN=local
 
 # XDG dirs
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -29,7 +35,6 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME:-$HOME/.config}/git/gitconfig"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
-export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
 export PARALLEL_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/parallel"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
