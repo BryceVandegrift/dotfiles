@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Menu for music
+
+play() {
+	mpc single off
+	song=$(mpc $1 | head -1)
+	notify-send "Now Playing: $song"
+}
+
+queue() {
+	while true; do
+		choice=$(mpc listall | dmenu -i -r -p "Queue Song:" -l 30)
+		[ -z "$choice" ] && exit 0
+		mpc add "$choice"
+		notify-send "$choice Queued"
+	done
+}
+
+clean() {
+	mpc clear
+	notify-send "Queue cleared."
+}
+
+choice=$(printf "Play\nPause\nNext\nPrev\nQueue\nStop\nClear" | dmenu -i -p "Music:")
+
+[ -z $choice ] && exit 1
+
+case "$choice" in
+	"Play") play "play" ;;
+	"Pause") mpc pause ;;
+	"Next") play "next" ;;
+	"Prev") play "prev" ;;
+	"Queue") queue ;;
+	"Stop") mpc stop ;;
+	"Clear") clean ;;
+	*) exit 1 ;;
+esac

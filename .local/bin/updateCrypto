@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CHARTLOC=$HOME/.local/share/cryptoPrices/
+
+[ ! -d $CHARTLOC ] && mkdir -p $CHARTLOC
+
+if [ -z $1 ]; then
+	echo "Please specify a cryptocurrency (ex:BTC,XMR,etc.)"
+	exit 1
+fi
+
+curl -sL rate.sx/"$1" > $CHARTLOC/priceGraph
+curl -sL rate.sx > $CHARTLOC/priceTable
+curl -sL rate.sx/1"$1" > $CHARTLOC/price

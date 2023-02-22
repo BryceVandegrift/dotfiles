@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Checks internet
+state="$(ip link show enp4s0 | grep enp4s0 | awk '{print $9}')"
+
+case $BUTTON in
+	1) notify-send "Your ip address is: $(printf "$(curl -Ls ifconfig.me)\n")"
+esac
+
+echo $state

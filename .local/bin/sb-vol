@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Gets volume
+vol="$(pamixer --get-volume)"
+
+case $BUTTON in
+	1) setsid "$TERMINAL" -e pulsemixer; pkill -RTMIN+3 dwmblocks ;;
+	2) pamixer -t ;;
+esac
+
+if [ $(pamixer --get-mute) = true ]; then
+	echo "Mute"
+else
+	echo "$vol"
+fi
+

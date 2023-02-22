@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wp_dir="$HOME/.local/wallpapers"
+wp_prog="xwallpaper --zoom "
+get_wp=$(ls $wp_dir | sort -R | tail -1)
+
+
+$wp_prog "$wp_dir/$get_wp"

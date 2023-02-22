@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CURRENCY=XMR
+CHARTDIR=$HOME/.local/share/cryptoPrices
+
+[ ! -d $CHARTDIR ] && mkdir $CHARTDIR
+
+case $BUTTON in
+	1) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceGraph ;;
+	2) updateCrypto $CURRENCY && notify-send "Updating $CURRENCY prices..." ;;
+	3) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceTable ;;
+esac
+
+cat $CHARTDIR/price

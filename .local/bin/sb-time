@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $BUTTON in
+	1) notify-send "Today is:" "$(date)" ;;
+	2) notify-send "$(cal)" ;;
+esac
+
+date "+%b %d %R:%S"

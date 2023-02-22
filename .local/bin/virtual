@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Script to run Qemu virtual machines
+
+# Directory where .sh virt files are located
+virt_dir=$HOME/Drive/Virtual
+
+if ! machines=$(ls -1 $virt_dir/*.sh 2>/dev/null)
+then
+	notify-send "No virtual machines available"
+	exit 1
+fi
+
+virt_names=$(echo "$machines" | awk 'BEGIN {FS="/"} {print $NF}')
+
+result=$(echo "$virt_names" | dmenu -l 10 | sed "s|^|$virt_dir/|g")
+
+# Exit if nothing chosen
+[ -z "$result" ] && exit 1
+
+cd $virt_dir
+setsid -f $result >/dev/null 2>&1

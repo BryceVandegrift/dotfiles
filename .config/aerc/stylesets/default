@@ -1,0 +1,36 @@
+# aerc styleset
+
+default.fg = white
+default.bg = black
+
+error.fg = red
+warning.fg = yellow
+success.fg = green
+
+title.fg = blue
+header.fg = blue
+
+statusline_default.fg = yellow
+statusline_error.fg = red
+statusline_success.fg = green
+statusline_*.bold = true
+
+completion_default.reverse = true
+completion_default.fg = yellow
+
+msglist_unread.bold = true
+msglist_deleted.fg = red
+msglist_flagged.fg = yellow
+msglist_marked.fg = purple
+msglist_marked.underline = true
+msglist_*.selected.bg = white
+msglist_*.selected.fg = black
+
+dirlist_*.selected.bg = white
+dirlist_*.selected.fg = black
+dirlist_unread.fg = green
+
+tab.selected.fg = black
+tab.selected.bg = white
+
+spinner.fg = blue
