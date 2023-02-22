@@ -1,6 +1,6 @@
 # Bryce's dotfiles
 
-These are my person dotfiles.
+These are my personal dotfiles.
 They include:
 
 - Configs for:
