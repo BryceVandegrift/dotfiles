@@ -34,3 +34,6 @@ tab.selected.fg = black
 tab.selected.bg = white
 
 spinner.fg = blue
+
+selector_chooser.bg = blue
+selector_focused.bg = blue
