@@ -13,3 +13,4 @@ alias rss="sfeed_curses $SFEED_FEEDS/*"
 # Custom aliases
 alias ed="ed -p '*'"
 alias yt-dlp="yt-dlp --embed-metadata -i"
+alias irssi="irssi --home=${XDG_CONFIG_HOME:-$HOME/.config}/irssi/"
