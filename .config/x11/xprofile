@@ -8,9 +8,6 @@ wallpapers &
 # Allows notfications
 dunst &
 
-# Start music daemon
-mpd &
-
 # Add compositing
 xcompmgr &
 

@@ -6,9 +6,9 @@ They include:
 - Configs for:
 	- aerc
 	- dunst
-	- mpd
 	- mpv
-	- nvim/vim
+	- NeoVim/Vim
+	- X11/Xorg
 	- zathura
 	- zsh
 	- and more
