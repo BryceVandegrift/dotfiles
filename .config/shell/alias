@@ -6,10 +6,6 @@ alias ip="ip -color=auto"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 
-# sfeed aliases
-alias feeds="sfeed_update $SFEED_SOURCE"
-alias rss="sfeed_curses $SFEED_FEEDS/*"
-
 # Custom aliases
 alias ed="ed -p '*'"
 alias yt-dlp="yt-dlp --embed-metadata -i"
