@@ -6,7 +6,8 @@ let g:plugins = [
 	\ "https://github.com/junegunn/goyo.vim.git",
 	\ "https://github.com/tpope/vim-surround.git",
 	\ "https://github.com/tpope/vim-commentary.git",
-	\ "https://github.com/zaid/vim-rec.git"]
+	\ "https://github.com/zaid/vim-rec.git",
+	\ "https://github.com/ziglang/zig.vim.git"]
 
 set title
 set go=a
