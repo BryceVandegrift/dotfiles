@@ -4,7 +4,7 @@ CURRENCY=XMR
 CHARTDIR="${XDG_DATA_HOME:-$HOME/.local/share}/cryptoPrices"
 
 [ ! -d $CHARTDIR ] && mkdir $CHARTDIR
-[ ! -f $CHARTDIR/price] && touch $CHARTDIR/price
+[ ! -f $CHARTDIR/price ] && touch $CHARTDIR/price
 
 case $BUTTON in
         1) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceGraph ;;

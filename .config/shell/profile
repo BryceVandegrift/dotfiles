@@ -40,3 +40,6 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
 export PRINTER="Canon_MF642C_643C_644C_UFR_II"
+
+# Automatically start dwm in tty
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
