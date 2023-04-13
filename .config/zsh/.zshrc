@@ -4,7 +4,7 @@
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/alias" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/alias"
 
 # zsh history
-HISTFILE=~/.cache/zsh/history
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTSIZE=1000
 SAVEHIST=1000
 
