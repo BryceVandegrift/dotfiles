@@ -1,0 +1,15 @@
+set clean-database-on-startup true
+set initial-unread-first-sorting true
+set download-timeout 20
+
+# Colors
+set color-list-item-unread-fg bold yellow
+set color-list-feed-unread-fg bold yellow
+set color-list-section-unread-fg bold yellow
+
+# Custom keybinds
+bind U mark-unread
+bind L exec lynx "%l"
+bind m exec mpv "%l"
+bind x exec curl -fLs "%l" | imgpipe
+bind z exec curl -fLs "%l" | zathura -
