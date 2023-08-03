@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Color aliases
-alias ls="ls -hN --color=auto --group-directories-first"
-alias ip="ip -color=auto"
-alias diff="diff --color=auto"
-alias grep="grep --color=auto"
+#alias ls="ls -hN --color=auto --group-directories-first"
+#alias ip="ip -color=auto"
+#alias diff="diff --color=auto"
+#alias grep="grep --color=auto"
 
 # Custom aliases
 alias ed="ed -p '*'"

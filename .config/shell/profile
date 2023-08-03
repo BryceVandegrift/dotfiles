@@ -3,11 +3,11 @@
 # My shell profile for the z-shell
 
 # Add scripts to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d)}"
 
 # Program vars
-export BROWSER="firefox"
-export EDITOR="nvim"
+export BROWSER="firefox-esr"
+export EDITOR="vim"
 export TERMINAL="st"
 export READER="zathura"
 
@@ -41,6 +41,9 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
 export PRINTER="Canon_MF642C_643C_644C_UFR_II"
+
+# Create zsh cache dir if not there
+[ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ] && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
 # Automatically start dwm in tty
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
