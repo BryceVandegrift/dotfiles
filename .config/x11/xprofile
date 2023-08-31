@@ -15,7 +15,7 @@ xcompmgr &
 mpd &
 
 # Hide mouse cursor after 3 sec.
-unclutter -idle 3 -root &
+unclutter-xfixes -idle 3 -root &
 
 # Start dwmblocks
 dwmblocks &
@@ -24,6 +24,6 @@ dwmblocks &
 xautolock -locker slock -time 30 &
 
 # Start pulseaudio that doesn't quit on idle
-pidof -s runit &&
-	! pidof -s pulseaudio >/dev/null 2>&1 &&
+#pidof -s runit &&
+#	! pidof -s pulseaudio >/dev/null 2>&1 &&
 	setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1

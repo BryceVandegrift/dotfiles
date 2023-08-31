@@ -1,1 +1,1 @@
-.config/x11/xprofile
+.config/x11/xinitrc
