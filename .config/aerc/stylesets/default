@@ -1,5 +1,8 @@
 # aerc styleset
 
+*.default = true
+*.normal = true
+
 default.fg = white
 default.bg = black
 
