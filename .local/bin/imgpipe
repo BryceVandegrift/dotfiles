@@ -1,6 +1,8 @@
 #!/bin/sh
 
-tmpfile="${TMPDIR:-/tmp}/ingpipe_$$"
+# A script that pipes an image to sxiv
+
+tmpfile="${TMPDIR:-/tmp}/imgpipe_$$"
 trap 'rm -f -- $tmpfile' EXIT
 
 if [ "$#" -eq 0 ]; then
