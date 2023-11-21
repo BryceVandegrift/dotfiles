@@ -3,6 +3,7 @@
 case $BUTTON in
 	1) notify-send "Today is:" "$(date)" ;;
 	2) notify-send "$(cal)" ;;
+	3) notify-send "Unix timestamp:" "$(date +%s)" ;;
 esac
 
 date "+%b %d %R:%S"
