@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Get emojis
+# Get unicode characters
 
-chosen=$(cut -d ';' -f1 ~/.local/share/emoji | dmenu -i -l 30 | sed "s/ .*//")
+chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/unicode | dmenu -i -l 30 | sed "s/ .*//")
 
-[ -z "$chosen" ] && exit
+[ -z "$chosen" ] && exit 1
 
 if [ -n "$1" ]; then
-		xdotool type "$chosen"
+		# Type character if any arg is given
+		xdotool type "$chosen" >/dev/null 2>&1
 	else
-			printf "$chosen" | xclip -selection clipboard
-				notify-send "'$chosen' copied to clipboard." &
+		printf "$chosen" | xclip -selection clipboard
+		notify-send "'$chosen' copied to clipboard."
 fi
-
