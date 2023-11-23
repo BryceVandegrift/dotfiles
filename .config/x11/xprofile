@@ -11,9 +11,6 @@ dunst &
 # Add compositing
 xcompmgr &
 
-# Start mpd
-mpd &
-
 # Hide mouse cursor after 3 sec.
 unclutter-xfixes -idle 3 -root &
 
