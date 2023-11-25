@@ -24,6 +24,7 @@ syntax on
 set encoding=utf-8
 set number relativenumber
 set ttyfast
+set nofoldenable
 
 " Enable autocompletion
 set wildmode=longest,list,full
@@ -37,5 +38,12 @@ map <leader>f :Goyo \| set linebreak<CR>
 " Map spell checking
 map <leader>s :setlocal spell! spelllang=en_us<CR>
 
+" Trim trailing spaces/whitespace
+nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 " Open split at bottom right
 set splitbelow splitright
+
+" Some defaults for files
+autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
+autocmd FileType text setlocal tw=80
