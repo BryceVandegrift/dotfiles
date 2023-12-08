@@ -37,6 +37,7 @@ export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
 export PARALLEL_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/parallel"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonrc"
 
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
