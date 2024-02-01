@@ -1,11 +1,10 @@
 set clean-database-on-startup true
-set initial-unread-first-sorting true
+set menu-item-sorting unread-desc
 set download-timeout 20
 
 # Colors
-set color-list-item-unread-fg bold yellow
-set color-list-feed-unread-fg bold yellow
-set color-list-section-unread-fg bold yellow
+set color-list-feed-unread bold yellow
+set color-list-section-unread bold yellow
 
 # Custom keybinds
 bind U mark-unread
