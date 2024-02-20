@@ -1,4 +1,4 @@
-set sandbox none
+set sandbox normal
 set selection-clipboard clipboard
 map u scroll half-up
 map d scroll half-down

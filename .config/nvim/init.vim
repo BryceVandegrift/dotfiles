@@ -8,7 +8,6 @@ let g:plugins = [
 	\ "https://github.com/tpope/vim-commentary.git",
 	\ "https://github.com/gpanders/vim-scdoc.git",
 	\ "https://github.com/vim-scripts/SyntaxRange.git",
-	\ "https://github.com/zaid/vim-rec.git",
 	\ "https://github.com/ziglang/zig.vim.git"]
 
 set title
@@ -52,6 +51,9 @@ nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
 
 " Open split at bottom right
 set splitbelow splitright
+
+" Disable running zig fmt after editing zig files
+let g:zig_fmt_autosave = 0
 
 " Some defaults for files
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
