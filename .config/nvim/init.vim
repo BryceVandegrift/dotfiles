@@ -58,6 +58,7 @@ let g:zig_fmt_autosave = 0
 " Some defaults for files
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
 autocmd FileType text setlocal tw=80
+autocmd FileType vimwiki setlocal tw=80
 
 " Toggle statusbar
 let s:bar_hidden = 0
