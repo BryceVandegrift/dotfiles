@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# A script that pipes an image to sxiv
+# A script that pipes an image to nsxiv
 
 tmpfile="${TMPDIR:-/tmp}/imgpipe_$$"
 trap 'rm -f -- $tmpfile' EXIT
@@ -18,7 +18,7 @@ for arg in "$@"; do
 done
 
 if [ -s "$tmpfile" ]; then
-	sxiv -a -q "$@" "$tmpfile"
+	nsxiv -a -q "$@" "$tmpfile"
 else
-	sxiv -a "$@"
+	nsxiv -a "$@"
 fi

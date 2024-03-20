@@ -9,3 +9,4 @@ alias updatedb="doas updatedb"
 alias otp="pass otp"
 alias ffmpeg="ffmpeg -hide_banner"
 alias adb='HOME="$XDG_DATA_HOME/android" adb'
+alias sxiv="nsxiv"
