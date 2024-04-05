@@ -6,10 +6,10 @@ They include:
 - Configs for:
 	- aerc
 	- dunst
+	- ksh/oksh
 	- mpv
 	- NeoVim/Vim
 	- X11/Xorg
 	- zathura
-	- zsh
 	- and more
 - My personal scripts

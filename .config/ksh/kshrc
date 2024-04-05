@@ -1,0 +1,17 @@
+# Config for ksh
+
+# Load aliases
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/alias" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/shell/alias"
+
+# ksh history
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/ksh/history"
+HISTSIZE=250
+
+# Disable ctrl+s
+stty stop undef
+
+# Enable vi keys
+set -o vi-tabcomplete
+
+# Custom prompt
+PS1="\[\e[1;31;40m[\e[1;33;40m\h\e[1;32;40m@\e[1;34;40m\u \e[1;35;40m\w\e[1;31;40m]\e[0;0m$\] "

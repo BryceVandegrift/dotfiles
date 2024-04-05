@@ -1,9 +1,9 @@
-#!/bin/zsh
+#!/bin/ksh
 
-# My shell profile for the z-shell
+# My shell profile for the korn shell
 
 # Add scripts to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d)}"
+export PATH="$PATH:$(find ~/.local/bin -type d)"
 
 # Program vars
 export BROWSER="firefox-esr"
@@ -28,7 +28,7 @@ export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 export LESSHISTFILE="-"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export ENV="${XDG_CONFIG_HOME:-$HOME/.config}/ksh/kshrc"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME:-$HOME/.config}/git/gitconfig"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
@@ -43,8 +43,8 @@ export ANDROID_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
 
-# Create zsh cache dir if not there
-[ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ] && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+# Create ksh cache dir if not there
+[ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/ksh" ] && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/ksh"
 
 # Automatically start dwm in tty
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
