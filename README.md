@@ -5,11 +5,12 @@ They include:
 
 - Configs for:
 	- aerc
-	- dunst
-	- yash
 	- mpv
 	- NeoVim/Vim
+	- newsraft
+	- sxiv/nsxiv
 	- X11/Xorg
+	- yash
 	- zathura
 	- and more
 - My personal scripts
