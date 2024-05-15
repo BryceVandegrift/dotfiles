@@ -1,6 +1,4 @@
-#!/bin/ksh
-
-# My shell profile for the korn shell
+# My generic shell profile
 
 # Add scripts to $PATH
 export PATH="$PATH:$(find ~/.local/bin -type d)"
@@ -28,8 +26,6 @@ export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 export LESSHISTFILE="-"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-export ENV="${XDG_CONFIG_HOME:-$HOME/.config}/ksh/kshrc"
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME:-$HOME/.config}/git/gitconfig"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
@@ -42,9 +38,6 @@ export ANDROID_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
 
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
-
-# Create ksh cache dir if not there
-[ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/ksh" ] && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/ksh"
 
 # Automatically start dwm in tty
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx

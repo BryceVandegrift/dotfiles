@@ -6,7 +6,7 @@ They include:
 - Configs for:
 	- aerc
 	- dunst
-	- ksh/oksh
+	- yash
 	- mpv
 	- NeoVim/Vim
 	- X11/Xorg
