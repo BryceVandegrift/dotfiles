@@ -30,5 +30,5 @@ bindkey --vi-command '\^L' clear-and-redraw-all
 HOSTNAME=${HOSTNAME:=$(uname -n)}
 LOGNAME=${LOGNAME:=$(whoami)}
 YASH_PS1='\fo.\fr.[\fy.${HOSTNAME}\fg.@\fb.${LOGNAME} '\
-'\fm.${${${PWD:/~/\~}##*/}:-$PWD}\fr.]\fD.\$ '
+'\fm.$(echo $PWD | sed "s|$HOME|~|")\fr.]\fD.\$ '
 PS1P='\fi.'

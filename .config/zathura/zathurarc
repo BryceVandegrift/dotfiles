@@ -1,4 +1,4 @@
-set sandbox normal
+set database sqlite
 set selection-clipboard clipboard
 map u scroll half-up
 map d scroll half-down

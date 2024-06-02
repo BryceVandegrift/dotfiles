@@ -7,8 +7,7 @@ let g:plugins = [
 	\ "https://github.com/tpope/vim-surround.git",
 	\ "https://github.com/tpope/vim-commentary.git",
 	\ "https://github.com/gpanders/vim-scdoc.git",
-	\ "https://github.com/vim-scripts/SyntaxRange.git",
-	\ "https://github.com/ziglang/zig.vim.git"]
+	\ "https://github.com/vim-scripts/SyntaxRange.git"]
 
 set title
 set go=a
@@ -20,6 +19,12 @@ set nobackup
 set noswapfile
 set notimeout
 set laststatus=2
+
+" NeoVim exclusive settings
+if has("nvim")
+	colorscheme vim
+	set notermguicolors
+endif
 
 " Basic settings
 set nocompatible
@@ -51,9 +56,6 @@ nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
 
 " Open split at bottom right
 set splitbelow splitright
-
-" Disable running zig fmt after editing zig files
-let g:zig_fmt_autosave = 0
 
 " Some defaults for files
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
