@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Checks battery info
+# Takes battery number as argument
+
+bat="/sys/class/power_supply/BAT$1"
+
+die() {
+	# Prints message and exits
+	printf "%s\n" $1
+	exit 0
+}
+
+case $BUTTON in
+	1) notify-send "Status: $(cat '$bat/status')" ;;
+	3) notify-send "Capacity level: $(cat '$bat/capacity_level')" ;;
+esac
+
+# Display 'N/A' if battery does not exist
+[ -d "$bat" ] || die "N/A"
+
+read -r capacity < "$bat/capacity"
+printf "%s%%\n" "$capacity"
