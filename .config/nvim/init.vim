@@ -47,6 +47,9 @@ map <leader>f :Goyo \| set linebreak<CR>
 " Map spell checking
 map <leader>s :setlocal spell! spelllang=en_us<CR>
 
+" Compile LaTeX documents
+autocmd FileType tex map <silent> <leader>c :w! \| !pdflatex "%:p"<CR>
+
 " Keybindings for convenience
 nnoremap Y y$
 nnoremap cc :center<CR>
@@ -61,6 +64,10 @@ set splitbelow splitright
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
 autocmd FileType text setlocal tw=80
 autocmd FileType vimwiki setlocal tw=80
+
+" Syntax highlighting for specific files
+autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " Toggle statusbar
 let s:bar_hidden = 0

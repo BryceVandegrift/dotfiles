@@ -18,7 +18,7 @@ for arg in "$@"; do
 done
 
 if [ -s "$tmpfile" ]; then
-	nsxiv -a -q "$@" "$tmpfile"
+	nsxiv -p -a -q "$@" "$tmpfile"
 else
-	nsxiv -a "$@"
+	nsxiv -p -a "$@"
 fi

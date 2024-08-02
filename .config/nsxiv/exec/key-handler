@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Handle custom keys for nsxiv
+
+while read -r file
+do
+	case "$1" in
+		"y") xclip -selection clipboard -target image/png "$file" & ;;
+		"w") wallpapers "$file" & ;;
+	esac
+done
