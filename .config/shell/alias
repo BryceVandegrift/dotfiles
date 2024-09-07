@@ -2,7 +2,7 @@
 
 # Custom aliases
 alias ed="ed -p '*'"
-alias yt-dlp="yt-dlp --embed-metadata -i"
+alias yt-dlp="yt-dlp --embed-metadata --restrict-filenames -i"
 alias irssi="irssi --home=${XDG_CONFIG_HOME:-$HOME/.config}/irssi/"
 alias locate="plocate"
 alias updatedb="doas updatedb"

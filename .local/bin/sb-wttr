@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Checks weather
+
+WTTRDIR="${XDG_DATA_HOME:-$HOME/.local/share}/weather"
+
+[ ! -d $WTTRDIR ] && mkdir $WTTRDIR
+[ ! -f $WTTRDIR/temp ] && touch $WTTRDIR/temp
+
+update() {
+	curl -sL wttr.in > $WTTRDIR/tempGraph
+	curl -sL v2.wttr.in > $WTTRDIR/tempInfo
+	curl -sL 'wttr.in/?format=%t\n' > $WTTRDIR/temp
+}
+
+case $BUTTON in
+	1) setsid "$TERMINAL" -e less -Srf $WTTRDIR/tempGraph ;;
+	2) update && notify-send "Updating weather info..." ;;
+	3) setsid "$TERMINAL" -e less -Srf $WTTRDIR/tempInfo ;;
+esac
+
+cat $WTTRDIR/temp
