@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Mounts and unmounts USB drives
+
+# Add these lines to "doas.conf" in order run this script from outside the terminal:
+# permit nopass :wheel cmd mount
+# permit nopass :wheel cmd umount
+
+option=$(printf "mount\numount\n" | dmenu -p "mount or umount:" -r -i -l 2)
+
+[ -z $option ] && exit 1
+
+rmtemp() {
+	rmdir $1
+	exit 1
+}
+
+if [ "$option" = "mount" ]; then
+	temp="$(mktemp -d)"
+	drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -r -i -l 5)
+
+	[ -z $drive ] && rmtemp "$temp"
+
+	doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send "mounted $drive to $temp"
+elif [ "$option" = "umount" ]; then
+	mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -r -i -l 5)
+
+	[ -z "$mount" ] && exit 1
+
+	drive="$(echo "$mount" | awk '{ print $1 }')"
+	mountpoint="$(echo "$mount" | awk '{ print $3 }')"
+
+	doas umount "$mountpoint" >/dev/null 2>&1 && notify-send "unmounted $drive from $mountpoint"
+	rmdir "$mountpoint"
+fi
