@@ -6,6 +6,7 @@ mpv --geometry=200x200+1600+800 \
 	--shuffle \
 	--x11-name=no-title \
 	--player-operation-mode=pseudo-gui \
+	--af=lavfi="acompressor" \
 	--no-terminal \
 	"$@" \
 	-- $HOME/music/
