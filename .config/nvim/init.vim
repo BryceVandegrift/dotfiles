@@ -24,6 +24,8 @@ set laststatus=2
 if has("nvim")
 	colorscheme vim
 	set notermguicolors
+	call add(g:plugins, "https://github.com/nvim-treesitter/nvim-treesitter")
+	let g:post_update_hooks = ["TSUpdate"]
 endif
 
 " Basic settings
@@ -53,12 +55,19 @@ autocmd FileType tex map <silent> <leader>c :w! \| !pdflatex "%:p"<CR>
 " Keybindings for convenience
 nnoremap Y y$
 nnoremap cc :center<CR>
+nnoremap <leader>p :Ex<CR>
 
 " Trim trailing spaces/whitespace
 nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Open split at bottom right
 set splitbelow splitright
+
+" Split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Some defaults for files
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2

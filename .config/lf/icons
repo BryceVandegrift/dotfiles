@@ -1,0 +1,76 @@
+# lf icons
+
+# file types
+fi	📄
+di	📁
+ex	🖥️
+ln	🔗
+or	❌
+ow	📂
+so	🔌
+bd	🧱
+st	🏷️
+pi	🗃️
+cd	🔤
+sg	👥
+su	🧑
+
+# file extensions
+*.txt	📝
+*.md	📝
+*.png	🖼️
+*.jpg	🖼️
+*.jpeg	🖼️
+*.gif	🖼️
+*.tif	🖼️
+*.tiff	🖼️
+*.webp	🖼️
+*.ico	🖼️
+*.svg	🖼️
+*.jxl	🖼️
+*.bmp	🖼️
+*.mp3	🔊
+*.opus	🔊
+*.ogg	🔊
+*.m4a	🔊
+*.flac	🔊
+*.wav	🔊
+*.mov	📹
+*.webm	📹
+*.mp4	📹
+*.m4v	📹
+*.mpeg	📹
+*.mpg	📹
+*.avi	📹
+*.flv	📹
+*.mkv	📹
+*.html	🌐
+*.gpg	🔒
+*.css	🎨
+*.ps	📚
+*.pdf	📚
+*.djvu	📚
+*.tex	📜
+*.ms	📜
+*.mom	📜
+*.me	📜
+*.bib	🎓
+*.tar	📦
+*.tgz	📦
+*.zip	📦
+*.xz	📦
+*.bz	📦
+*.gz	📦
+*.7z	📦
+*.rar	📦
+*.iso	📀
+*.img	📀
+*.log	📑
+*.1	📑
+*.torrent 📥
+
+# code extensions
+*.py	🐍
+*.rs	🦀
+*.go	🦦
+*.pl	🐪
