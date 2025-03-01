@@ -1,4 +1,60 @@
 # Bryce's lf config
 
+# Basic settings
 set icons
 set period 1
+set relativenumber
+set incsearch
+set incfilter
+set truncatechar '…'
+set scrolloff 10
+set autoquit true
+set shellopts '-eu'
+
+# Custom commands
+cmd mkdir $mkdir -p "$@"
+
+cmd touch $touch "$@"
+
+cmd open ${{
+	file="$(readlink -f $f || realpath $f)"
+	mime="$(file --mime-type $file -b)"
+
+	case $mime in
+		text/html) lynx $fx ;;
+		text/* | application/json | inode/x-empty) $EDITOR $fx ;;
+		application/x-sc | text/csv) sc-im $f ;;
+		image/*) setsid -f nsxiv -a $f >/dev/null 2>&1 ;;
+		audio/*) mpv --no-terminal --af=lavfi="acompressor" --player-operation-mode=pseudo-gui $f ;;
+		video/*) setsid -f mpv --no-terminal $f >/dev/null 2>&1 ;;
+		application/pdf | application/postscript | image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		*) for f in $fx; do setsid -f xdg-open $f >/dev/null 2>&1; done ;;
+	esac
+}}
+
+cmd bulkrename ${{
+	tempfile_old="$(mktemp)"
+	tempfile_new="$(mktemp)"
+
+	[ -n "$fs" ] && fs=$(basename -a $fs) || fs=$(ls)
+
+	echo "$fs" > $tempfile_old
+	echo "$fs" > $tempfile_new
+	$EDITOR $tempfile_new
+
+	[ "$(wc -l < $tempfile_old)" -eq "$(wc -l < $tempfile_new)" ] || { rm -f $tempfile_new $tempfile_old; exit 1; }
+
+	paste $tempfile_old $tempfile_new | while IFS="$(printf '\t')" read -r src dest
+	do
+		[ "$src" = "$dest" ] || [ -e "$dest" ] || mv -- "$src" "$dest"
+	done
+
+	rm -f $tempfile_old $tempfile_new
+	lf -remote "send $id unselect"
+}}
+
+
+# Keybindings
+map D delete
+map <c-r> reload
+map B bulkrename
