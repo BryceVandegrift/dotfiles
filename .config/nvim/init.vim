@@ -70,9 +70,9 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Some defaults for files
-autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
-autocmd FileType text setlocal tw=80
-autocmd FileType vimwiki setlocal tw=80
+autocmd FileType markdown setlocal tw=78 et ts=2 sw=2
+autocmd FileType text setlocal tw=72
+autocmd FileType vimwiki setlocal tw=78
 
 " Syntax highlighting for specific files
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
