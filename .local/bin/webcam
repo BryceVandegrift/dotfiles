@@ -3,5 +3,6 @@
 # Script to open webcam in mpv
 
 mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency \
-	--input-conf=/dev/null --title=webcam "$(ls /dev/video* 2>/dev/null | head -n 1)" >/dev/null 2>&1 || \
+	--input-conf=/dev/null --title=webcam --aid=no --sid=no \
+	"$(ls /dev/video* 2>/dev/null | head -n 1)" >/dev/null 2>&1 || \
 	notify-send "Cannot open webcam."
