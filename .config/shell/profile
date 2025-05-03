@@ -4,7 +4,7 @@
 export PATH="$PATH:$(find ~/.local/bin -type d)"
 
 # Program vars
-export BROWSER="firefox-esr"
+export BROWSER="firefox"
 export EDITOR="vim"
 export TERMINAL="st"
 export READER="zathura"

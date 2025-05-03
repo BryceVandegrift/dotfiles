@@ -16,4 +16,8 @@ stty stop undef
 # Enable vi keybindings
 set -o vi
 
+# Get completions similar to zsh
+#bind "set show-all-if-ambiguous on"
+#bind "TAB:menu-complete"
+
 PS1='\[\e[91;1m\][\[\e[93m\]\h\[\e[92m\]@\[\e[94m\]\u\[\e[0m\] \[\e[95;1m\]\w\[\e[91m\]]\[\e[0m\]\\$ '

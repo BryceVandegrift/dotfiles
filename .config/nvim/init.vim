@@ -24,8 +24,6 @@ set laststatus=2
 if has("nvim")
 	colorscheme vim
 	set notermguicolors
-	call add(g:plugins, "https://github.com/nvim-treesitter/nvim-treesitter")
-	let g:post_update_hooks = ["TSUpdate"]
 endif
 
 " Basic settings
