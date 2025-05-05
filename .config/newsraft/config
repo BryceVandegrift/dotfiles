@@ -1,4 +1,4 @@
-set clean-database-on-startup true
+set database-clean-on-startup true
 set menu-item-sorting unread-desc
 set download-timeout 20
 set reload-period 30
