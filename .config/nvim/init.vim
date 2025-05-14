@@ -10,7 +10,6 @@ let g:plugins = [
 	\ "https://github.com/vim-scripts/SyntaxRange.git"]
 
 set title
-set go=a
 set mouse=a
 set hlsearch
 set clipboard+=unnamedplus
