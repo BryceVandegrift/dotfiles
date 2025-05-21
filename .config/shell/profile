@@ -39,6 +39,7 @@ export MINETEST_USER_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/minetest"
 
 # Other settings
 export MOZ_USE_XINPUT2="1"	# Mozilla smooth scrolling
+export _JAVA_AWT_WM_NONREPARENTING=1	# Lets Java GUIs function correctly
 
 # Automatically start dwm in tty
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
