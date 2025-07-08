@@ -7,4 +7,11 @@ case $BUTTON in
 	3) notify-send "Local ip address: $(ip -o addr show | grep 'inet 192.168' | awk '{ print $4 }' | sed 's|/.*||')"
 esac
 
-echo "$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/e*/operstate 2>/dev/null)"
+eth="$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/e*/operstate 2>/dev/null)"
+wlan="$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/w*/operstate 2>/dev/null)"
+
+if [ ! -z "$wlan" ]; then
+	echo "$wlan"
+else
+	echo "$eth"
+fi
