@@ -21,4 +21,5 @@ dwmblocks &
 xautolock -locker slock -time 30 &
 
 # Start pipewire
+export $(dbus-launch)
 /usr/libexec/pipewire-launcher &

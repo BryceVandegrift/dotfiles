@@ -4,7 +4,7 @@
 
 case $BUTTON in
 	1) notify-send "Public ip address: $(printf "$(curl -Ls ifconfig.me)\n")" ;;
-	3) notify-send "Local ip address: $(ip -o addr show | grep 'inet 192.168' | awk '{ print $4 }' | sed 's|/.*||')"
+	3) notify-send "Local ip address: $(ip -o addr show | grep 'brd' | awk '{ print $4 }' | sed 's|/.*||')"
 esac
 
 eth="$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/e*/operstate 2>/dev/null)"
