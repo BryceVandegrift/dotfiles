@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Displays time
+
 case $BUTTON in
 	1) notify-send "Today is:" "$(date)" ;;
 	2) notify-send "$(cal)" ;;

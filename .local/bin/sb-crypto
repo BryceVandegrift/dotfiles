@@ -1,6 +1,8 @@
 #!/bin/sh
 
-CURRENCY=XMR
+# Script that gets and displays cryptocurrency prices
+# Takes an argument to specify cryptocurrency
+
 CHARTDIR="${XDG_DATA_HOME:-$HOME/.local/share}/cryptoPrices"
 
 [ ! -d $CHARTDIR ] && mkdir $CHARTDIR
@@ -18,7 +20,7 @@ update() {
 
 case $BUTTON in
         1) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceGraph ;;
-        2) update "$CURRENCY" && notify-send "Updating $CURRENCY prices..." ;;
+        2) update "$1" && notify-send "Updating $1 prices..." ;;
         3) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceTable ;;
 esac
 

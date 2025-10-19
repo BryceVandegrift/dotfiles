@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Gets volume
+# Displays and controls volume
+
 vol="$(pamixer --get-volume)"
 
 case $BUTTON in
