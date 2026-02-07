@@ -2,7 +2,7 @@
 
 # Get unicode characters
 
-chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/unicode | dmenu -i -l 30 | sed "s/ .*//")
+chosen=$(cut -d ';' -f1 "${XDG_DATA_HOME:-$HOME/.local/share}/unicode" | dmenu -i -l 30 | sed "s/ .*//")
 
 [ -z "$chosen" ] && exit 1
 
@@ -10,6 +10,6 @@ if [ -n "$1" ]; then
 		# Type character if any arg is given
 		xdotool type "$chosen" >/dev/null 2>&1
 	else
-		printf "$chosen" | xclip -selection clipboard
+		printf "%s" "$chosen" | xclip -selection clipboard
 		notify-send "'$chosen' copied to clipboard."
 fi

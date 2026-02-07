@@ -8,20 +8,20 @@
 
 option=$(printf "mount\numount\n" | dmenu -p "mount or umount:" -r -i -l 2)
 
-[ -z $option ] && exit 1
+[ -z "$option" ] && exit 1
 
 rmtemp() {
-	rmdir $1
+	rmdir "$1"
 	exit 1
 }
 
 if [ "$option" = "mount" ]; then
 	temp="$(mktemp -d)"
-	drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -r -i -l 5)
+	drive=$(find /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -r -i -l 5)
 
-	[ -z $drive ] && rmtemp "$temp"
+	[ -z "$drive" ] && rmtemp "$temp"
 
-	doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send "mounted $drive to $temp"
+	doas mount "$drive" "$temp" >/dev/null 2>&1 && notify-send "mounted $drive to $temp"
 elif [ "$option" = "umount" ]; then
 	mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -r -i -l 5)
 

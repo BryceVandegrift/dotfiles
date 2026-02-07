@@ -3,8 +3,8 @@
 # A simple script for browser bookmarks
 
 bm_file="${XDG_DATA_HOME:-$HOME/.local/share}/bookmarks"
-[ ! -f $bm_file ] && touch $bm_file
+[ ! -f "$bm_file" ] && touch "$bm_file"
 
-mark="$(cat $bm_file | dmenu -i -l 20 -p 'Bookmarks:')"
+mark="$(cat "$bm_file" | dmenu -i -l 20 -p 'Bookmarks:')"
 
-[ ! -z $mark ] && $BROWSER $mark
+[ ! -z "$mark" ] && $BROWSER "$mark"
