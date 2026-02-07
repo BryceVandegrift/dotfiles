@@ -2,7 +2,7 @@
 
 # Script to set wallpapers
 
-get_wp=$(find "$HOME/.local/wallpapers" | shuf -n 1)
+get_wp=$(find "$HOME/.local/wallpapers" | sed '1,1d' | shuf -n 1)
 
 if [ -z "$1" ]; then
 	xwallpaper --zoom "$get_wp"
