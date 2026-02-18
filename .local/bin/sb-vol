@@ -9,7 +9,7 @@ case $BUTTON in
 	2) pamixer -t ;;
 esac
 
-if [ $(pamixer --get-mute) = true ]; then
+if [ "$(pamixer --get-mute)" = true ]; then
 	echo "Mute"
 else
 	echo "$vol"

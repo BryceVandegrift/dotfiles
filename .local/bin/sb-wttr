@@ -5,19 +5,19 @@
 
 WTTRDIR="${XDG_DATA_HOME:-$HOME/.local/share}/weather"
 
-[ ! -d $WTTRDIR ] && mkdir $WTTRDIR
-[ ! -f $WTTRDIR/temp ] && touch $WTTRDIR/temp
+[ ! -d "$WTTRDIR" ] && mkdir "$WTTRDIR"
+[ ! -f "$WTTRDIR/temp" ] && touch "$WTTRDIR/temp"
 
 update() {
-	curl -sL wttr.in/"$1" > $WTTRDIR/tempGraph
-	curl -sL v2.wttr.in/"$1" > $WTTRDIR/tempInfo
-	curl -sL "wttr.in/$1?format=%t\n" > $WTTRDIR/temp
+	curl -sL wttr.in/"$1" > "$WTTRDIR/tempGraph"
+	curl -sL v2.wttr.in/"$1" > "$WTTRDIR/tempInfo"
+	curl -sL "wttr.in/$1?format=%t\n" > "$WTTRDIR/temp"
 }
 
 case $BUTTON in
-	1) setsid "$TERMINAL" -e less -Srf $WTTRDIR/tempGraph ;;
+	1) setsid "$TERMINAL" -e less -Srf "$WTTRDIR/tempGraph" ;;
 	2) update "$1" && notify-send "Updating weather info..." ;;
-	3) setsid "$TERMINAL" -e less -Srf $WTTRDIR/tempInfo ;;
+	3) setsid "$TERMINAL" -e less -Srf "$WTTRDIR/tempInfo" ;;
 esac
 
-cat $WTTRDIR/temp
+cat "$WTTRDIR/temp"

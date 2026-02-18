@@ -5,23 +5,23 @@
 
 CHARTDIR="${XDG_DATA_HOME:-$HOME/.local/share}/cryptoPrices"
 
-[ ! -d $CHARTDIR ] && mkdir $CHARTDIR
-[ ! -f $CHARTDIR/price ] && touch $CHARTDIR/price
+[ ! -d "$CHARTDIR" ] && mkdir "$CHARTDIR"
+[ ! -f "$CHARTDIR/price" ] && touch "$CHARTDIR/price"
 
 update() {
-	if [ -z $1 ]; then
+	if [ -z "$1" ]; then
 		notify-send "Please specify a cryptocurrency (i.e. BTC, XMR, etc.)"
 		return
 	fi
-	curl -sL rate.sx/"$1" > $CHARTDIR/priceGraph
-	curl -sL rate.sx > $CHARTDIR/priceTable
-	curl -sL rate.sx/1"$1" > $CHARTDIR/price
+	curl -sL rate.sx/"$1" > "$CHARTDIR/priceGraph"
+	curl -sL rate.sx > "$CHARTDIR/priceTable"
+	curl -sL rate.sx/1"$1" > "$CHARTDIR/price"
 }
 
 case $BUTTON in
-        1) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceGraph ;;
+        1) setsid "$TERMINAL" -e less -Srf "$CHARTDIR/priceGraph" ;;
         2) update "$1" && notify-send "Updating $1 prices..." ;;
-        3) setsid "$TERMINAL" -e less -Srf $CHARTDIR/priceTable ;;
+        3) setsid "$TERMINAL" -e less -Srf "$CHARTDIR/priceTable" ;;
 esac
 
-cat $CHARTDIR/price
+cat "$CHARTDIR/price"

@@ -3,7 +3,7 @@
 # Checks internet
 
 case $BUTTON in
-	1) notify-send "Public ip address: $(printf "$(curl -Ls ifconfig.me)\n")" ;;
+	1) notify-send "Public ip address: $(printf '%s' "$(curl -Ls ifconfig.me)\n")" ;;
 	3) notify-send "Local ip address: $(ip -o addr show | grep 'brd' | awk '{ print $4 }' | sed 's|/.*||')"
 esac
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Config for Bash
 
 # Load aliases
