@@ -1,2 +1,11 @@
+# For Python version before 3.14
 import readline
 readline.write_history_file = lambda *args: None
+
+# For Python versions 3.14 and after
+try:
+ import _pyrepl.readline
+ _pyrepl.readline.write_history_file = lambda *args: None
+ _pyrepl.readline.append_history_file = lambda *args: None
+except ImportError:
+ pass
